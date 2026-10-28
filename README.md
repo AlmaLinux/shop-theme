@@ -31,7 +31,7 @@ This is the WordPress block theme for [shop.almalinux.org](https://shop.almalinu
 3. In WordPress, go to **Appearance > Themes > Add New Theme > Upload Theme** and upload the zip.
 4. Use **Live Preview** to check the shop before you click **Activate**.
 
-`docs/LAUNCH-CHECKLIST.md` covers the WordPress, WooCommerce and Printful setup that goes with the theme.
+`docs/LAUNCH-CHECKLIST.md` covers the WordPress, WooCommerce and Printful setup that goes with the theme. `docs/TESTING.md` explains how to test the theme on a local site first.
 
 ## Editing
 
