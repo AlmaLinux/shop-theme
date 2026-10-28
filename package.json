@@ -1,0 +1,14 @@
+{
+	"name": "almalinux-shop-theme",
+	"private": true,
+	"description": "Local development tools for the AlmaLinux Shop theme. None of this ships in the theme zip.",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"dev": "wp-playground-cli server --php=8.3 --wp=7.1.4 --login --mount-before-install=.:/wordpress/wp-content/themes/almalinux-shop --blueprint=dev/blueprint.json",
+		"screenshots": "node dev/screenshots.mjs"
+	},
+	"devDependencies": {
+		"@wp-playground/cli": "3.1.61",
+		"playwright": "1.64.1"
+	}
+}

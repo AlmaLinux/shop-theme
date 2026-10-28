@@ -33,6 +33,21 @@ This is the WordPress block theme for [shop.almalinux.org](https://shop.almalinu
 
 `docs/LAUNCH-CHECKLIST.md` covers the WordPress, WooCommerce and Printful setup that goes with the theme. `docs/TESTING.md` explains how to test the theme on a local site first.
 
+The zip leaves out the local development tools (`dev/`, `package.json` and the git config files), which `.gitattributes` excludes from `git archive`.
+
+## Local development
+
+You can run a complete local copy of the shop with [WordPress Playground](https://wordpress.org/playground/), which runs WordPress in Node with no web server, database or Docker. You need Node.js 20 or newer.
+
+1. Run `npm install` once, then `npx playwright install chromium` if you want screenshots.
+2. Run `npm run dev` and open <http://127.0.0.1:9400>. You're logged in as `admin` (password `password`).
+3. Edit the theme files in this repo and reload the page. The site uses this folder directly, so there's nothing to copy or rebuild.
+4. With the site running, run `npm run screenshots` in a second terminal. It screenshots every page in `docs/TESTING.md` at phone, tablet and desktop widths, places a test order, and writes a review page to `dev/screenshots/<date>/index.html`.
+
+Every `npm run dev` builds a fresh site from `dev/blueprint.json`. That file pins WordPress 7.1.4, WooCommerce 11.2.1 and PHP 8.3 to match production, and it imports WooCommerce's sample products. Test orders, settings and Site Editor changes are gone when you stop the server, so anything that should last belongs in this repo. PHP warnings and errors go to `dev/logs/debug.log`, which is cleared on each start.
+
+Playground runs PHP compiled to WebAssembly on SQLite, not MySQL, so it's close to production but not identical. If something works locally and breaks on the live site, suspect that difference first.
+
 ## Editing
 
 You can edit templates and patterns in the Site Editor (**Appearance > Editor**). Edits made there are saved in the database, not in this repo, so they'll override the files here without anyone seeing them in git. For anything that should last, make the change in this repo and upload a new version. If someone has already changed a template in the Site Editor, use **Reset** on that template to go back to the theme's version.

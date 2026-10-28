@@ -2,7 +2,7 @@
 
 These are directions for setting up a local WordPress and WooCommerce site to test this theme before it goes anywhere near shop.almalinux.org. They're written so that a person or an AI coding agent can follow them.
 
-The theme has not been rendered or tested yet. Everything in it was written against the WordPress 7.1.4 and WooCommerce 11.2.1 source, and the PHP and JSON pass a syntax check, but nobody has looked at a page. Expect to find and fix problems.
+Every page now renders on the local site without errors, but nobody has reviewed the screenshots for layout, branding or accessibility yet. Everything was written against the WordPress 7.1.4 and WooCommerce 11.2.1 source. Expect to find and fix problems.
 
 ## Ground rules
 
@@ -13,23 +13,29 @@ The theme has not been rendered or tested yet. Everything in it was written agai
 
 ## 1. Set up the site
 
-Use whichever of these works on a Mac:
+Follow "Local development" in the README: `npm install`, `npx playwright install chromium`, then `npm run dev`. The site is at <http://127.0.0.1:9400> and takes under a minute to start.
 
-- **WordPress Playground CLI** (no Docker needed): `npx @wp-playground/cli server`, with this repo mounted as `wp-content/themes/almalinux-shop` and a blueprint that installs WooCommerce and activates the theme.
-- **wp-env** (needs Docker): a `.wp-env.json` that loads WordPress 7.1, WooCommerce 11.2.1 and this theme.
+`dev/blueprint.json` builds the site fresh on every start, so there's no setup to do by hand. It:
 
-Check each tool's current documentation for the exact flags, because both change often.
+- installs WooCommerce 11.2.1 and Twenty Twenty-Five, and activates this theme (mounted straight from the repo, so edits show up on reload)
+- imports WooCommerce's sample products with its CSV importer, which gives you categories, the Color and Size attributes, variations and sale prices
+- adds a product with a long name, a product with no image, and a "Community favorite" tag (the sample data has no tags)
+- turns on attribute archives so the attribute template gets used, sets permalinks to **Post name**, and turns on Cash on delivery
+- turns on `WP_DEBUG` and writes PHP warnings to `dev/logs/debug.log`
 
-## 2. Add test content
+If you need more test content, add it to the blueprint rather than through the admin, so the next person gets it too.
 
-- Import WooCommerce's sample products (`sample-data/sample_products.xml` in the WooCommerce plugin folder) with **Tools > Import > WordPress**. That gives you products with categories, tags, attributes, variations and sale prices.
-- Make one product with a long name and one with no image, so the edge cases show up.
-- Create the Cart, Checkout and My account pages if the setup didn't, and set permalinks to **Post name**.
-- Turn on a test payment method (Cash on delivery or Check payments works) so you can get through checkout.
+## 2. Take the screenshots
+
+With the site running, run `npm run screenshots` in a second terminal. It takes about two minutes. It finds real product, category, tag and attribute URLs from the store, screenshots every page in the table below at 390px (phone), 768px (tablet) and 1440px (desktop), and places a Cash on delivery order to reach the confirmation page. It flags any page with a console error, a PHP warning on the page, or an unexpected HTTP status.
+
+Open the `index.html` it prints to review all the screenshots on one page. Each run gets its own dated folder under `dev/screenshots/`, which git ignores.
+
+The script can't judge how a page looks, and it doesn't check the Site Editor. That's what section 3 is for.
 
 ## 3. Check every page
 
-Screenshot each page at three widths: 390px (phone), 768px (tablet) and 1440px (desktop).
+These are the pages the screenshot script covers.
 
 | Page | URL |
 | --- | --- |
@@ -37,7 +43,7 @@ Screenshot each page at three widths: 390px (phone), 768px (tablet) and 1440px (
 | All products | `/shop/` |
 | A category | `/product-category/<slug>/` |
 | A tag | `/product-tag/<slug>/` |
-| An attribute | `/?pa_color=blue` or the attribute's archive URL |
+| An attribute | `/color/blue/` (the archive for one attribute value) |
 | Search results, with results | `/?s=hoodie&post_type=product` |
 | Search results, nothing found | `/?s=zzzz&post_type=product` |
 | A simple product | any |

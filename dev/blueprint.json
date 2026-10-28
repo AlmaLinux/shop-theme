@@ -1,0 +1,85 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "AlmaLinux Shop local test site",
+		"description": "WordPress, WooCommerce 11.2.1, Twenty Twenty-Five and this theme, with WooCommerce's sample products. Used by npm run dev.",
+		"author": "AlmaLinux OS Foundation Promo SIG"
+	},
+	"landingPage": "/",
+	"features": {
+		"networking": true
+	},
+	"steps": [
+		{
+			"step": "mkdir",
+			"path": "/wordpress/wp-content/themes/almalinux-shop/dev/logs"
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/themes/almalinux-shop/dev/logs/debug.log",
+			"data": ""
+		},
+		{
+			"step": "defineWpConfigConsts",
+			"consts": {
+				"WP_DEBUG": true,
+				"WP_DEBUG_LOG": "/wordpress/wp-content/themes/almalinux-shop/dev/logs/debug.log",
+				"WP_DEBUG_DISPLAY": true,
+				"SCRIPT_DEBUG": true
+			}
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "wordpress.org/themes",
+				"slug": "twentytwentyfive"
+			},
+			"options": {
+				"activate": false
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "url",
+				"url": "https://downloads.wordpress.org/plugin/woocommerce.11.2.1.zip"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "activateTheme",
+			"themeFolderName": "almalinux-shop"
+		},
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "AlmaLinux Shop (local)",
+				"permalink_structure": "/%postname%/",
+				"woocommerce_coming_soon": "no",
+				"woocommerce_store_pages_only": "no",
+				"woocommerce_onboarding_profile": { "skipped": true },
+				"woocommerce_default_country": "US:NC",
+				"woocommerce_currency": "USD",
+				"woocommerce_enable_guest_checkout": "yes",
+				"woocommerce_cod_settings": {
+					"enabled": "yes",
+					"title": "Cash on delivery",
+					"description": "Local test payment method.",
+					"instructions": "",
+					"enable_for_methods": [],
+					"enable_for_virtual": "yes"
+				}
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php\nrequire '/wordpress/wp-load.php';\nrequire_once ABSPATH . 'wp-admin/includes/file.php';\nrequire_once ABSPATH . 'wp-admin/includes/media.php';\nrequire_once ABSPATH . 'wp-admin/includes/image.php';\nrequire_once WC_ABSPATH . 'includes/admin/importers/class-wc-product-csv-importer-controller.php';\nrequire_once WC_ABSPATH . 'includes/import/class-wc-product-csv-importer.php';\n\n// Import WooCommerce's sample products with its own CSV importer, which (unlike the\n// WordPress XML importer) creates the global Color attribute the variations need.\nclass AlmaLinux_Shop_Dev_Mapper extends WC_Product_CSV_Importer_Controller {\n\tpublic function map( $headers ) {\n\t\treturn $this->auto_map_columns( $headers, false );\n\t}\n}\nwp_set_current_user( 1 );\n$file    = WC_ABSPATH . 'sample-data/sample_products.csv';\n$probe   = new WC_Product_CSV_Importer( $file, array( 'lines' => 1, 'parse' => false ) );\n$mapping = ( new AlmaLinux_Shop_Dev_Mapper() )->map( $probe->get_raw_keys() );\n$result  = ( new WC_Product_CSV_Importer( $file, array( 'mapping' => $mapping, 'parse' => true ) ) )->import();\nforeach ( $result['failed'] as $error ) {\n\terror_log( 'Sample product import failed: ' . $error->get_error_message() );\n}\n\n// Edge cases from docs/TESTING.md: a very long product name, and a product with no image.\n$long = new WC_Product_Simple();\n$long->set_name( 'AlmaLinux Community Edition Heavyweight Organic Cotton Zip-Up Hoodie with Embroidered Logo and Extra Long Name' );\n$long->set_regular_price( '54.00' );\n$long->save();\n\n$no_image = new WC_Product_Simple();\n$no_image->set_name( 'Sticker With No Image' );\n$no_image->set_regular_price( '3.00' );\n$no_image->save();\n\n// The sample data has no tags, so tag a few products to give the tag archive something to show.\nforeach ( wc_get_products( array( 'limit' => 4, 'type' => array( 'simple', 'variable' ) ) ) as $product ) {\n\twp_set_object_terms( $product->get_id(), 'Community favorite', 'product_tag', true );\n}\n\n// Turn on attribute archives so the theme's taxonomy-product_attribute template gets used.\nforeach ( wc_get_attribute_taxonomies() as $attribute ) {\n\twc_update_attribute( $attribute->attribute_id, array( 'name' => $attribute->attribute_label, 'slug' => $attribute->attribute_name, 'type' => $attribute->attribute_type, 'order_by' => $attribute->attribute_orderby, 'has_archives' => true ) );\n}\n\n// WooCommerce makes these pages on install. This is a safety net in case it didn't.\nWC_Install::create_pages();\n"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php\n// A separate request, so the attribute archives turned on above are registered before the permalinks are rebuilt.\nrequire '/wordpress/wp-load.php';\nflush_rewrite_rules();\n"
+		}
+	]
+}

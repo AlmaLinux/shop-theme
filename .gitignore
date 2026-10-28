@@ -1,3 +1,7 @@
 *.zip
 .DS_Store
 node_modules/
+
+# Local dev output (npm run dev, npm run screenshots)
+dev/logs/
+dev/screenshots/

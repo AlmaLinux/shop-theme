@@ -1,0 +1,6 @@
+# Local development tools. Keep them out of the theme zip built with git archive.
+/dev export-ignore
+/package.json export-ignore
+/package-lock.json export-ignore
+/.gitattributes export-ignore
+/.gitignore export-ignore
