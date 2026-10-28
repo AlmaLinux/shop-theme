@@ -16,17 +16,17 @@ This is the setup that goes with the theme. Work through it in the WordPress adm
 
 ## 3. Site basics
 
-- [ ] Under **Settings > General**, set the Site Title to "AlmaLinux Shop" and write a one-line tagline.
-- [ ] Under **Settings > Permalinks**, use **Post name**. The theme's links expect `/shop/`, `/cart/`, `/checkout/`, `/my-account/` and `/refund_returns/`.
-- [ ] Under **WooCommerce > Settings > Advanced > Page setup**, confirm that Cart, Checkout, My account and Terms and conditions point at the right pages.
-- [ ] Set the site icon (favicon). Under **Appearance > Editor > Styles**, or the Site Logo block's settings, upload `static/fav/android-chrome-512x512.png` from the almawww repo. **(check: where WordPress 7.1 puts the site icon setting for block themes)**
+- [x] Under **Settings > General**, set the Site Title to "AlmaLinux Shop" and write a one-line tagline.
+- [x] Under **Settings > Permalinks**, use **Post name**. The theme's links expect `/shop/`, `/cart/`, `/checkout/`, `/my-account/` and `/refund_returns/`.
+- [x] Under **WooCommerce > Settings > Advanced > Page setup**, confirm that Cart, Checkout, My account and Terms and conditions point at the right pages.
+- [x] Set the site icon (favicon). Under **Appearance > Editor > Styles**, or the Site Logo block's settings, upload `static/fav/android-chrome-512x512.png` from the almawww repo. **(check: where WordPress 7.1 puts the site icon setting for block themes)**
 
 ## 4. Install the theme
 
-- [ ] Under **Appearance > Themes**, make sure **Twenty Twenty-Five** is installed. This theme depends on it, so don't delete it.
-- [ ] Upload `almalinux-shop.zip` (see the README for how to build it).
-- [ ] Click **Live Preview** and check the home page, a category, a product, the cart and checkout before you click **Activate**.
-- [ ] Once it's active, delete the themes you aren't using (Storefront, Twenty Twenty-Three, Twenty Twenty-Four and so on). Every installed theme is more code to keep patched, even when it's switched off.
+- [x] Under **Appearance > Themes**, make sure **Twenty Twenty-Five** is installed. This theme depends on it, so don't delete it.
+- [x] Upload `almalinux-shop.zip` (see the README for how to build it).
+- [x] Click **Live Preview** and check the home page, a category, a product, the cart and checkout before you click **Activate**.
+- [x] Once it's active, delete the themes you aren't using (Storefront, Twenty Twenty-Three, Twenty Twenty-Four and so on). Every installed theme is more code to keep patched, even when it's switched off.
 
 ## 5. Reconnect Printful
 
