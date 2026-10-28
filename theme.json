@@ -1,0 +1,216 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": true,
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"defaultDuotone": false,
+			"palette": [
+				{ "name": "White", "slug": "base", "color": "#ffffff" },
+				{ "name": "Darkest navy (text on light)", "slug": "contrast", "color": "#000518" },
+				{ "name": "Brand yellow (highlight)", "slug": "accent-1", "color": "#ffcb12" },
+				{ "name": "Soft blue (links on dark)", "slug": "accent-2", "color": "#c4e1ff" },
+				{ "name": "Brand blue (links on light)", "slug": "accent-3", "color": "#0069da" },
+				{ "name": "Muted text", "slug": "accent-4", "color": "#5b6670" },
+				{ "name": "Light surface", "slug": "accent-5", "color": "#faf5f5" },
+				{ "name": "Hairline", "slug": "accent-6", "color": "color-mix(in srgb, currentColor 20%, transparent)" },
+				{ "name": "Deep blue (primary)", "slug": "al-deep-blue", "color": "#0f4266" },
+				{ "name": "Black pearl (deep band)", "slug": "al-deep-band", "color": "#082336" },
+				{ "name": "Card navy", "slug": "al-card", "color": "#264154" },
+				{ "name": "CTA cyan", "slug": "al-cta", "color": "#24c2ff" },
+				{ "name": "CTA cyan hover", "slug": "al-cta-hover", "color": "#0bbbff" },
+				{ "name": "Brand blue dark (hover)", "slug": "al-blue-dark", "color": "#004bbc" },
+				{ "name": "Brand green", "slug": "al-green", "color": "#86da2f" },
+				{ "name": "Error red (AA on white)", "slug": "al-red", "color": "#e1282b" },
+				{ "name": "Text on dark", "slug": "al-text-on-dark", "color": "#fefefe" },
+				{ "name": "Border on light", "slug": "al-border", "color": "#dcd7d7" }
+			]
+		},
+		"layout": {
+			"contentSize": "760px",
+			"wideSize": "1320px"
+		},
+		"spacing": {
+			"defaultSpacingSizes": false,
+			"spacingSizes": [
+				{ "name": "Tiny", "slug": "10", "size": "4px" },
+				{ "name": "X-Small", "slug": "20", "size": "10px" },
+				{ "name": "Small", "slug": "30", "size": "20px" },
+				{ "name": "Regular", "slug": "40", "size": "30px" },
+				{ "name": "Large", "slug": "50", "size": "clamp(30px, 5vw, 50px)" },
+				{ "name": "X-Large", "slug": "60", "size": "clamp(30px, 7vw, 70px)" },
+				{ "name": "XX-Large", "slug": "70", "size": "clamp(50px, 7vw, 90px)" },
+				{ "name": "XXX-Large", "slug": "80", "size": "clamp(70px, 10vw, 140px)" }
+			]
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fluid": true,
+			"fontFamilies": [
+				{
+					"name": "Montserrat",
+					"slug": "montserrat",
+					"fontFamily": "Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "Montserrat",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"fontDisplay": "swap",
+							"src": [ "file:./assets/fonts/montserrat/Montserrat-Variable.woff2" ]
+						}
+					]
+				},
+				{
+					"name": "System sans (matches almalinux.org body text)",
+					"slug": "system",
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'"
+				},
+				{
+					"name": "Monospace",
+					"slug": "mono",
+					"fontFamily": "'SF Mono', 'Source Code Pro', Consolas, 'Courier New', Courier, monospace"
+				}
+			],
+			"fontSizes": [
+				{ "name": "Small", "slug": "small", "size": "0.875rem", "fluid": false },
+				{ "name": "Medium", "slug": "medium", "size": "1rem", "fluid": false },
+				{ "name": "Large", "slug": "large", "size": "1.25rem", "fluid": { "min": "1.125rem", "max": "1.25rem" } },
+				{ "name": "Extra large", "slug": "x-large", "size": "1.75rem", "fluid": { "min": "1.5rem", "max": "1.75rem" } },
+				{ "name": "2X large", "slug": "xx-large", "size": "2.5rem", "fluid": { "min": "2rem", "max": "2.5rem" } },
+				{ "name": "Display", "slug": "display", "size": "3.5rem", "fluid": { "min": "2.25rem", "max": "3.5rem" } }
+			]
+		},
+		"useRootPaddingAwareAlignments": true
+	},
+	"styles": {
+		"color": {
+			"background": "var:preset|color|base",
+			"text": "var:preset|color|contrast"
+		},
+		"spacing": {
+			"blockGap": "1.2rem",
+			"padding": {
+				"left": "var:preset|spacing|40",
+				"right": "var:preset|spacing|40"
+			}
+		},
+		"typography": {
+			"fontFamily": "var:preset|font-family|system",
+			"fontSize": "var:preset|font-size|medium",
+			"fontWeight": "400",
+			"letterSpacing": "normal",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|montserrat",
+					"fontWeight": "300",
+					"lineHeight": "1.2",
+					"letterSpacing": "-0.01em"
+				}
+			},
+			"h1": { "typography": { "fontSize": "var:preset|font-size|xx-large" } },
+			"h2": { "typography": { "fontSize": "var:preset|font-size|x-large" } },
+			"h3": { "typography": { "fontSize": "var:preset|font-size|large", "fontWeight": "500" } },
+			"h4": { "typography": { "fontSize": "var:preset|font-size|medium", "fontWeight": "500" } },
+			"h5": { "typography": { "fontSize": "var:preset|font-size|medium", "fontWeight": "600" } },
+			"h6": {
+				"typography": {
+					"fontSize": "var:preset|font-size|small",
+					"fontWeight": "600",
+					"letterSpacing": "0.08em",
+					"textTransform": "uppercase"
+				}
+			},
+			"link": {
+				"color": { "text": "var:preset|color|accent-3" },
+				"typography": { "textDecoration": "underline" },
+				":hover": {
+					"color": { "text": "var:preset|color|al-blue-dark" }
+				},
+				":focus": {
+					"outline": { "color": "var:preset|color|accent-3", "offset": "2px", "style": "solid", "width": "2px" }
+				}
+			},
+			"button": {
+				"border": { "radius": "6px", "width": "0", "style": "none" },
+				"color": {
+					"background": "var:preset|color|al-cta",
+					"text": "var:preset|color|contrast"
+				},
+				"spacing": {
+					"padding": { "top": "0.75rem", "bottom": "0.75rem", "left": "1.5rem", "right": "1.5rem" }
+				},
+				"typography": {
+					"fontFamily": "var:preset|font-family|system",
+					"fontSize": "var:preset|font-size|medium",
+					"fontWeight": "600",
+					"lineHeight": "1.2",
+					"textDecoration": "none"
+				},
+				":hover": {
+					"color": {
+						"background": "var:preset|color|al-cta-hover",
+						"text": "var:preset|color|contrast"
+					}
+				},
+				":focus": {
+					"outline": { "color": "var:preset|color|accent-3", "offset": "2px", "style": "solid", "width": "2px" }
+				}
+			},
+			"caption": {
+				"typography": { "fontSize": "var:preset|font-size|small", "lineHeight": "1.4" },
+				"color": { "text": "var:preset|color|accent-4" }
+			}
+		},
+		"blocks": {
+			"core/navigation": {
+				"typography": { "fontSize": "var:preset|font-size|medium", "fontWeight": "500" },
+				"elements": {
+					"link": {
+						"typography": { "textDecoration": "none" },
+						":hover": { "typography": { "textDecoration": "underline" } }
+					}
+				}
+			},
+			"core/post-title": {
+				"elements": {
+					"link": {
+						"color": { "text": "currentColor" },
+						"typography": { "textDecoration": "none" },
+						":hover": { "typography": { "textDecoration": "underline" } }
+					}
+				}
+			},
+			"core/separator": {
+				"border": { "color": "var:preset|color|al-border", "width": "1px" }
+			},
+			"core/search": {
+				"border": { "radius": "6px" }
+			},
+			"core/query-pagination": {
+				"typography": { "fontSize": "var:preset|font-size|medium", "fontWeight": "500" }
+			},
+			"core/term-description": {
+				"color": { "text": "var:preset|color|accent-4" }
+			},
+			"woocommerce/product-price": {
+				"typography": { "fontWeight": "600" }
+			},
+			"woocommerce/breadcrumbs": {
+				"typography": { "fontSize": "var:preset|font-size|small" },
+				"color": { "text": "var:preset|color|accent-4" }
+			}
+		}
+	},
+	"templateParts": [
+		{ "area": "header", "name": "header", "title": "Header" },
+		{ "area": "footer", "name": "footer", "title": "Footer" },
+		{ "area": "header", "name": "checkout-header", "title": "Checkout header" }
+	],
+	"customTemplates": []
+}

@@ -1,0 +1,21 @@
+/*
+Theme Name: AlmaLinux Shop
+Theme URI: https://github.com/AlmaLinux/shop-theme
+Author: AlmaLinux OS Foundation Promo SIG
+Author URI: https://almalinux.org/
+Description: The block theme for shop.almalinux.org. It's a child of Twenty Twenty-Five that applies the AlmaLinux brand colors and type, matches the almalinux.org header and footer, and styles the WooCommerce store pages.
+Template: twentytwentyfive
+Requires at least: 6.7
+Tested up to: 7.1
+Requires PHP: 7.4
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: almalinux-shop
+Tags: e-commerce, full-site-editing, block-patterns, custom-colors, accessibility-ready
+*/
+
+/*
+ * Nearly all styling lives in theme.json. Store-specific rules that
+ * theme.json can't express live in assets/css/shop.css.
+ */
