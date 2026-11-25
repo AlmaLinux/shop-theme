@@ -2,6 +2,8 @@
 
 The photos in `assets/images/` are AlmaLinux community event photos from the almalinux.org blog image library (`static/blog-images/` in the [almawww repo](https://github.com/AlmaLinux/almalinux.org)). They were resized for the shop and their camera and GPS metadata was removed. If you add a photo, add a row here and make sure the people in it are happy to be on the shop.
 
+These photos aren't covered by the theme's GPL. They're licensed under the [Creative Commons Attribution-ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA 4.0), the same license as the rest of the almalinux.org site content. Credit them to the AlmaLinux OS Foundation. A photo you add here is licensed the same way, so only add photos the Foundation has the rights to.
+
 | File | Event | Source in almawww | Used on |
 | --- | --- | --- | --- |
 | `hero-ato-2024.jpg` | All Things Open 2024 | `static/blog-images/2025/ato_2024.jpg`, from [Ending 2024 with 9 events in 4 months](https://almalinux.org/blog/2025-01-10-event-wrapup/) | Front page hero |

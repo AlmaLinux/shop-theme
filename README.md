@@ -73,7 +73,7 @@ Montserrat is licensed separately under the SIL Open Font License 1.1 (see `asse
 
 The AlmaLinux name and logos are trademarks of the AlmaLinux OS Foundation and aren't covered by the GPL. See `TRADEMARKS.md`.
 
-The event photos in `assets/images/` come from the almalinux.org blog. See `CREDITS.md`.
+The photos in `assets/images/` aren't covered by the GPL either. They come from the almalinux.org blog and are licensed under CC BY-SA 4.0, with credit to the AlmaLinux OS Foundation. See `CREDITS.md`.
 
 ## Contributing
 
