@@ -41,7 +41,8 @@ This is the setup that goes with the theme. Work through it in the WordPress adm
 
 - [ ] Rewrite the WooCommerce draft **Refund and Returns Policy** page to match Printful's returns policy, then publish it. The footer links to it as "Shipping, returns and refunds."
 - [ ] Under **WooCommerce > Settings > Accounts & Privacy**, set the privacy policy text shown at checkout and link it to <https://almalinux.org/p/privacy-policy/>, or to a shop-specific page if the store needs one.
-- [ ] Decide whether checkout needs a terms checkbox and which page it points to.
+- [ ] Create the shop's **Terms and Conditions** page under **Pages**, with the slug `terms-conditions`, and publish it before you upload a theme version that links to it from the footer. Then set it as the **Terms and conditions** page under **WooCommerce > Settings > Advanced > Page setup**.
+- [ ] Decide whether checkout needs a terms checkbox.
 - [ ] Turn on guest checkout (**WooCommerce > Settings > Accounts & Privacy**) so nobody has to make an account to buy a sticker.
 
 ## 7. Payments

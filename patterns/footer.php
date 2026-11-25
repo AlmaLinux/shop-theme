@@ -80,7 +80,7 @@ $almalinux_shop_logo = esc_url( get_stylesheet_directory_uri() . '/assets/images
 			<!-- wp:list {"className":"al-shop-footer-list","fontSize":"small"} -->
 			<ul class="wp-block-list al-shop-footer-list has-small-font-size">
 				<!-- wp:list-item --><li><a href="https://almalinux.org/p/privacy-policy/"><?php esc_html_e( 'Privacy Policy', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
-				<!-- wp:list-item --><li><a href="https://almalinux.org/p/terms-of-service/"><?php esc_html_e( 'Terms of Service', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
+				<!-- wp:list-item --><li><a href="/terms-conditions/"><?php esc_html_e( 'Terms and Conditions', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
 				<!-- wp:list-item --><li><a href="https://almalinux.org/p/the-almalinux-os-licensing-policy/"><?php esc_html_e( 'Licensing Policy', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
 				<!-- wp:list-item --><li><a href="https://almalinux.org/p/the-almalinux-os-trademark-usage-policy/"><?php esc_html_e( 'Trademark Usage Policy', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
 			</ul>

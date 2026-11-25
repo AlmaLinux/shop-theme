@@ -69,7 +69,7 @@ This repo is the real version of the theme's wording, including the front page a
 2. Compare its `templates/` and `parts/` files with this repo to find what changed. The export turns patterns into plain HTML with the live site's image URLs written in, so copy the wording into `patterns/*.php` by hand instead of copying the exported files over.
 3. Commit, build the zip, upload it, and use **Reset** on each template or template part that was edited.
 
-The links in the header and footer assume WooCommerce's default page slugs: `/shop/`, `/cart/`, `/checkout/`, `/my-account/` and `/refund_returns/`. If you change a slug in WordPress, update the patterns too.
+The links in the header and footer assume WooCommerce's default page slugs: `/shop/`, `/cart/`, `/checkout/`, `/my-account/` and `/refund_returns/`. The footer also links to the shop's own Terms and Conditions page at `/terms-conditions/`, which is a normal WordPress page, not part of the theme. If you change a slug in WordPress, update the patterns too.
 
 ## License
 
