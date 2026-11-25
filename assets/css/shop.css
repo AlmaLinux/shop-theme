@@ -3,6 +3,13 @@
  * Colors come from the theme.json palette through --wp--preset--color--* variables.
  */
 
+/* Page frame --------------------------------------------------------- */
+
+/* WordPress puts the global block gap between the header, the page content and the footer. Each of those sets its own padding, and the gap shows up as a white strip wherever a dark band touches the header or footer, so remove it. */
+.wp-site-blocks > * {
+	margin-block-start: 0;
+}
+
 /* Header ------------------------------------------------------------- */
 
 .al-shop-logo img {

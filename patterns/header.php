@@ -30,7 +30,10 @@ $almalinux_shop_logo = esc_url( get_stylesheet_directory_uri() . '/assets/images
 
 		<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"right"}} -->
 		<div class="wp-block-group">
-			<!-- wp:navigation {"overlayBackgroundColor":"al-deep-band","overlayTextColor":"al-text-on-dark","layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"},"ariaLabel":"Shop"} -->
+			<?php
+			// The account and mini cart blocks are placed below by hand. ignoredHookedBlocks stops WooCommerce from also inserting its own copies after the menu.
+			?>
+			<!-- wp:navigation {"metadata":{"ignoredHookedBlocks":["woocommerce/customer-account","woocommerce/mini-cart"]},"overlayBackgroundColor":"al-deep-band","overlayTextColor":"al-text-on-dark","layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"},"ariaLabel":"Shop"} -->
 				<!-- wp:navigation-link {"label":"<?php echo esc_attr__( 'All products', 'almalinux-shop' ); ?>","url":"/shop/","kind":"custom"} /-->
 				<!-- wp:navigation-link {"label":"almalinux.org","url":"https://almalinux.org/","kind":"custom","className":"al-shop-nav-main-site"} /-->
 			<!-- /wp:navigation -->
