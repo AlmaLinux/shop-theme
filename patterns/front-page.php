@@ -10,6 +10,30 @@
  */
 
 $almalinux_shop_hero = esc_url( get_theme_file_uri( 'assets/images/hero-ato-2024.jpg' ) );
+
+// Photos for the "Seen at events" gallery. See CREDITS.md for where each one came from.
+$almalinux_shop_events = array(
+	array(
+		'file'    => 'event-ato-2024.jpg',
+		'alt'     => __( 'Seven people in AlmaLinux shirts at the AlmaLinux booth at All Things Open, most of them holding LEGO sets.', 'almalinux-shop' ),
+		'caption' => __( 'All Things Open 2024', 'almalinux-shop' ),
+	),
+	array(
+		'file'    => 'event-sc24.jpg',
+		'alt'     => __( 'Six people, most in AlmaLinux shirts, at the AlmaLinux booth at SC24, holding LEGO sets.', 'almalinux-shop' ),
+		'caption' => __( 'SC24', 'almalinux-shop' ),
+	),
+	array(
+		'file'    => 'event-cloudfest-2024.jpg',
+		'alt'     => __( 'Three people taking a selfie in front of the AlmaLinux booth at CloudFest, one of them in an AlmaLinux shirt.', 'almalinux-shop' ),
+		'caption' => __( 'CloudFest 2024', 'almalinux-shop' ),
+	),
+	array(
+		'file'    => 'event-nerdearla.jpg',
+		'alt'     => __( 'A group selfie at the AlmaLinux booth at Nerdearla, with a person in an AlmaLinux hoodie waving in the background.', 'almalinux-shop' ),
+		'caption' => __( 'Nerdearla', 'almalinux-shop' ),
+	),
+);
 ?>
 <!-- wp:group {"tagName":"main","layout":{"type":"default"}} -->
 <main class="wp-block-group">
@@ -104,6 +128,37 @@ $almalinux_shop_hero = esc_url( get_theme_file_uri( 'assets/images/hero-ato-2024
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->
+	</div>
+	<!-- /wp:group -->
+	<!-- wp:group {"align":"full","className":"al-shop-events","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}},"elements":{"link":{"color":{"text":"var:preset|color|accent-2"}}}},"backgroundColor":"al-deep-band","textColor":"al-text-on-dark","layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull al-shop-events has-al-text-on-dark-color has-al-deep-band-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+		<!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"46rem","justifyContent":"left"}} -->
+		<div class="wp-block-group alignwide">
+			<!-- wp:heading -->
+			<h2 class="wp-block-heading"><?php esc_html_e( 'Seen at events', 'almalinux-shop' ); ?></h2>
+			<!-- /wp:heading -->
+
+			<!-- wp:paragraph {"textColor":"accent-2","fontSize":"large"} -->
+			<p class="has-accent-2-color has-text-color has-large-font-size"><?php
+		printf(
+			/* translators: %s: link to the shop's email address. */
+			esc_html__( 'These are AlmaLinux community members at our booths around the world. If you have a photo of yourself in AlmaLinux gear, send it to %s and we might feature it here.', 'almalinux-shop' ),
+			'<a href="mailto:hello@almalinux.org">hello@almalinux.org</a>'
+		);
+		?></p>
+			<!-- /wp:paragraph -->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:gallery {"columns":4,"linkTo":"none","align":"wide","className":"al-shop-events-gallery","style":{"spacing":{"blockGap":{"top":"var:preset|spacing|30","left":"var:preset|spacing|30"}}}} -->
+		<figure class="wp-block-gallery alignwide has-nested-images columns-4 is-cropped al-shop-events-gallery">
+			<?php foreach ( $almalinux_shop_events as $almalinux_shop_event ) : ?>
+			<!-- wp:image {"aspectRatio":"4/3","scale":"cover","linkDestination":"none"} -->
+			<figure class="wp-block-image"><img src="<?php echo esc_url( get_theme_file_uri( 'assets/images/' . $almalinux_shop_event['file'] ) ); ?>" alt="<?php echo esc_attr( $almalinux_shop_event['alt'] ); ?>" style="aspect-ratio:4/3;object-fit:cover"/><figcaption class="wp-element-caption"><?php echo esc_html( $almalinux_shop_event['caption'] ); ?></figcaption></figure>
+			<!-- /wp:image -->
+			<?php endforeach; ?>
+		</figure>
+		<!-- /wp:gallery -->
 	</div>
 	<!-- /wp:group -->
 </main>
