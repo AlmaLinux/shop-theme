@@ -59,7 +59,7 @@
 		<!-- wp:buttons {"align":"wide","className":"is-style-outline"} -->
 		<div class="wp-block-buttons alignwide is-style-outline">
 			<!-- wp:button {"className":"is-style-outline"} -->
-			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/shop/"><?php esc_html_e( 'See everything', 'almalinux-shop' ); ?></a></div>
+			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/shop/"><?php esc_html_e( 'See all products', 'almalinux-shop' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

@@ -81,11 +81,42 @@
 	padding: 0.5rem 0.75rem;
 }
 
-.al-shop-grid .wc-block-components-product-image,
 .wp-block-woocommerce-product-image-gallery img {
 	background: var(--wp--preset--color--accent-5);
 	border-radius: 8px;
 	overflow: hidden;
+}
+
+/* Each product image sits on a rounded light gray card. Printful images have white backgrounds, so multiply blends the white into the card and white or sand items still stand out from the page. isolation keeps the blend inside the card. */
+.al-shop-grid .wc-block-components-product-image {
+	background: var(--wp--preset--color--accent-5);
+	border-radius: 12px;
+	padding: clamp(10px, 1.5vw, 18px);
+	isolation: isolate;
+}
+
+.al-shop-grid .wc-block-components-product-image img {
+	mix-blend-mode: multiply;
+}
+
+.al-shop-grid .wc-block-product {
+	transition: transform 0.15s ease;
+}
+
+.al-shop-grid .wc-block-product:hover,
+.al-shop-grid .wc-block-product:focus-within {
+	transform: translateY(-3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.al-shop-grid .wc-block-product {
+		transition: none;
+	}
+
+	.al-shop-grid .wc-block-product:hover,
+	.al-shop-grid .wc-block-product:focus-within {
+		transform: none;
+	}
 }
 
 .al-shop-grid .wp-block-post-title a {
