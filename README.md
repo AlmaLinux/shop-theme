@@ -63,6 +63,12 @@ Playground runs PHP compiled to WebAssembly on SQLite, not MySQL, so it's close 
 
 You can edit templates and patterns in the Site Editor (**Appearance > Editor**). Edits made there are saved in the database, not in this repo, so they'll override the files here without anyone seeing them in git. For anything that should last, make the change in this repo and upload a new version. If someone has already changed a template in the Site Editor, use **Reset** on that template to go back to the theme's version.
 
+This repo is the real version of the theme's wording, including the front page and footer text. Products, product categories, pages and the header menu live in WordPress and are edited there. If you change theme text in the Site Editor on the live site (for a quick fix before an event, say), bring it back into the repo before the next theme upload:
+
+1. In the Site Editor, open any template, then choose **⋮ > Export** under **Tools**. It downloads a zip of the theme with the live edits included.
+2. Compare its `templates/` and `parts/` files with this repo to find what changed. The export turns patterns into plain HTML with the live site's image URLs written in, so copy the wording into `patterns/*.php` by hand instead of copying the exported files over.
+3. Commit, build the zip, upload it, and use **Reset** on each template or template part that was edited.
+
 The links in the header and footer assume WooCommerce's default page slugs: `/shop/`, `/cart/`, `/checkout/`, `/my-account/` and `/refund_returns/`. If you change a slug in WordPress, update the patterns too.
 
 ## License
