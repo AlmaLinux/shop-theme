@@ -55,7 +55,7 @@ You can run a complete local copy of the shop with [WordPress Playground](https:
 3. Edit the theme files in this repo and reload the page. The site uses this folder directly, so there's nothing to copy or rebuild.
 4. With the site running, run `npm run screenshots` in a second terminal. It screenshots every page in `docs/TESTING.md` at phone, tablet and desktop widths, places a test order, and writes a review page to `dev/screenshots/<date>/index.html`.
 
-Every `npm run dev` builds a fresh site from `dev/blueprint.json`. That file pins WordPress 7.1.4, WooCommerce 11.2.1 and PHP 8.3 to match production, and it imports WooCommerce's sample products. Test orders, settings and Site Editor changes are gone when you stop the server, so anything that should last belongs in this repo. PHP warnings and errors go to `dev/logs/debug.log`, which is cleared on each start.
+Every `npm run dev` builds a fresh site from `dev/blueprint.json`. That file pins WordPress 7.1.5, WooCommerce 11.2.1 and PHP 8.3 to match production, and it imports WooCommerce's sample products. Test orders, settings and Site Editor changes are gone when you stop the server, so anything that should last belongs in this repo. PHP warnings and errors go to `dev/logs/debug.log`, which is cleared on each start.
 
 Playground runs PHP compiled to WebAssembly on SQLite, not MySQL, so it's close to production but not identical. If something works locally and breaks on the live site, suspect that difference first.
 
