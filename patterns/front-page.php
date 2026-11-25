@@ -69,10 +69,6 @@ $almalinux_shop_events = array(
 			<!-- /wp:buttons -->
 		</div>
 		<!-- /wp:group -->
-
-		<!-- wp:paragraph {"className":"al-shop-photo-credit","fontSize":"small"} -->
-		<p class="al-shop-photo-credit has-small-font-size"><?php esc_html_e( 'Photo: the AlmaLinux crowd at All Things Open 2024', 'almalinux-shop' ); ?></p>
-		<!-- /wp:paragraph -->
 	</div></div>
 	<!-- /wp:cover -->
 

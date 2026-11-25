@@ -96,36 +96,11 @@
 	outline-color: var(--wp--preset--color--accent-2);
 }
 
-.al-shop-photo-credit {
-	position: absolute;
-	right: var(--wp--preset--spacing--40);
-	bottom: var(--wp--preset--spacing--20);
-	margin: 0;
-	max-width: calc(100% - 2 * var(--wp--preset--spacing--40));
-	padding: 0.2rem 0.6rem;
-	border-radius: 4px;
-	/* The credit sits over the uncovered part of the photo, so it gets its own dark backdrop to stay readable on any photo. */
-	background: color-mix(in srgb, var(--wp--preset--color--al-deep-band) 78%, transparent);
-	font-size: 0.75rem;
-}
-
 /* Below 1200px the text spans most of the photo, so the gradient would leave parts of it on a light background. Use a solid overlay that keeps white text above WCAG AA on any photo. The !important overrides the gradient set inline by the Cover block. */
 @media (max-width: 1199px) {
 	.al-shop-hero .wp-block-cover__background.has-background-dim.has-background-dim-100 {
 		background: var(--wp--preset--color--al-deep-band) !important;
 		opacity: 0.86;
-	}
-}
-
-/* On phones the credit would cover the buttons, so it drops into the flow under them. */
-@media (max-width: 781px) {
-	.al-shop-photo-credit {
-		position: static;
-		max-width: none;
-		margin-top: var(--wp--preset--spacing--40);
-		padding: 0;
-		background: none;
-		text-align: left;
 	}
 }
 
