@@ -18,7 +18,8 @@ Follow "Local development" in the README: `npm install`, `npx playwright install
 `dev/blueprint.json` builds the site fresh on every start, so there's no setup to do by hand. It:
 
 - installs WooCommerce 11.2.1 and Twenty Twenty-Five, and activates this theme (mounted straight from the repo, so edits show up on reload)
-- imports WooCommerce's sample products with its CSV importer, which gives you categories, the Color and Size attributes, variations and sale prices
+- imports WooCommerce's sample products with its CSV importer, which gives you the Color and Size attributes, variations and sale prices
+- replaces the sample categories with the shop's real ones (Apparel, Hats, Drinkware, Bags and Stickers) using `dev/categories.php`, with descriptions and thumbnails borrowed from sample product images. Bags has no thumbnail, to test the placeholder, and two products stay in Uncategorized, to test that the front page leaves it out
 - adds a product with a long name, a product with no image, and a "Community favorite" tag (the sample data has no tags)
 - turns on attribute archives so the attribute template gets used, sets permalinks to **Post name**, and turns on Cash on delivery
 - turns on `WP_DEBUG` and writes PHP warnings to `dev/logs/debug.log`
@@ -70,7 +71,7 @@ These are the parts most likely to need fixing:
 
 1. The `navigation-link` labels in `patterns/header.php` are built with PHP inside block attributes. Confirm they render and stay editable.
 2. Confirm the `woocommerce/mini-cart` and `woocommerce/customer-account` icons pick up the light color on the dark header.
-3. Confirm the `woocommerce/product-categories` block on the front page renders as pill links, and that `product-collection` on the front page shows the newest products.
+3. Confirm the "Shop by category" tiles on the front page (a core Terms Query block) show each category's thumbnail, name and description, leave out empty categories and Uncategorized, and that `product-collection` on the front page shows the newest products. Also open the front page template in the Site Editor and check that the tiles' Image block shows as bound to "Product category image."
 4. Confirm the `core/search` block with `query.post_type = product` returns product results in the product search template.
 5. Check that the checkout template uses this theme's `checkout-header` part and not WooCommerce's.
 6. Check that theme.json font sizes, spacing and the `display` size look right. The heading weights (300 for h1 and h2, 500 for smaller headings) are a judgment call, so flag anything that looks too thin.

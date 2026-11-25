@@ -79,6 +79,10 @@
 		},
 		{
 			"step": "runPHP",
+			"code": "<?php\n// Replace the sample categories with the shop's real ones (Apparel, Hats, Drinkware, Bags, Stickers), with thumbnails and descriptions.\nrequire '/wordpress/wp-content/themes/almalinux-shop/dev/categories.php';\n"
+		},
+		{
+			"step": "runPHP",
 			"code": "<?php\n// A separate request, so the attribute archives turned on above are registered before the permalinks are rebuilt.\nrequire '/wordpress/wp-load.php';\nflush_rewrite_rules();\n"
 		}
 	]

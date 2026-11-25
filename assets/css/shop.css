@@ -149,29 +149,109 @@
 	color: var(--wp--preset--color--al-text-on-dark);
 }
 
-/* Category list on the front page: simple pill links. */
-.al-shop-category-list ul {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--wp--preset--spacing--20);
+/* "Shop by category" tiles on the front page. Each category is a rounded card, and the cards cycle through the five tile tints, so a new category in WordPress gets a color without anyone picking one. The category name link stretches over the whole card, so the card is one link and one tab stop. */
+/* Up to five columns, never narrower than 140px, so phones get two per row. */
+.al-shop-categories .wp-block-term-template.wp-block-term-template {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(max(140px, calc((100% - 4 * var(--wp--preset--spacing--30)) / 5)), 1fr));
+	gap: var(--wp--preset--spacing--30);
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-.al-shop-category-list li a {
-	display: inline-block;
-	padding: 0.5rem 1rem;
-	border: 1px solid var(--wp--preset--color--al-border);
-	border-radius: 999px;
-	background: var(--wp--preset--color--base);
+.al-shop-categories .wp-block-term {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--10);
+	margin: 0;
+	padding: clamp(12px, 1.5vw, 18px);
+	border-radius: 12px;
+	background: var(--wp--preset--color--al-tint-blue);
+	transition: transform 0.15s ease;
+}
+
+.al-shop-categories .wp-block-term:nth-child(5n+2) {
+	background: var(--wp--preset--color--al-tint-green);
+}
+
+.al-shop-categories .wp-block-term:nth-child(5n+3) {
+	background: var(--wp--preset--color--al-tint-yellow);
+}
+
+.al-shop-categories .wp-block-term:nth-child(5n+4) {
+	background: var(--wp--preset--color--al-tint-red);
+}
+
+.al-shop-categories .wp-block-term:nth-child(5n) {
+	background: var(--wp--preset--color--al-tint-cyan);
+}
+
+.al-shop-categories .wp-block-term:hover,
+.al-shop-categories .wp-block-term:focus-within {
+	transform: translateY(-3px);
+}
+
+.al-shop-categories .wp-block-term > * {
+	margin: 0;
+}
+
+.al-shop-category-image {
+	margin-bottom: var(--wp--preset--spacing--10);
+}
+
+.al-shop-category-image img {
+	display: block;
+	width: 100%;
+	border-radius: 8px;
+	mix-blend-mode: multiply;
+}
+
+.al-shop-category-name {
+	font-weight: 700;
+}
+
+.al-shop-category-name a {
 	color: var(--wp--preset--color--contrast);
 	text-decoration: none;
 }
 
-.al-shop-category-list li a:hover {
-	border-color: var(--wp--preset--color--accent-3);
-	color: var(--wp--preset--color--accent-3);
+.al-shop-category-name a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: 12px;
+}
+
+.al-shop-categories .wp-block-term:hover .al-shop-category-name a {
+	text-decoration: underline;
+}
+
+.al-shop-category-name a:focus-visible {
+	outline: none;
+}
+
+.al-shop-category-name a:focus-visible::after {
+	outline: 2px solid var(--wp--preset--color--accent-3);
+	outline-offset: 2px;
+}
+
+.al-shop-category-description,
+.al-shop-category-description p {
+	margin: 0;
+	color: var(--wp--preset--color--al-card);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.al-shop-categories .wp-block-term {
+		transition: none;
+	}
+
+	.al-shop-categories .wp-block-term:hover,
+	.al-shop-categories .wp-block-term:focus-within {
+		transform: none;
+	}
 }
 
 /* Footer ------------------------------------------------------------- */

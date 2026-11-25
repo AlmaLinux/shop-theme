@@ -36,6 +36,31 @@
 	</div>
 	<!-- /wp:group -->
 
+	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"0"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:0">
+		<!-- wp:heading {"align":"wide"} -->
+		<h2 class="wp-block-heading alignwide"><?php esc_html_e( 'Shop by category', 'almalinux-shop' ); ?></h2>
+		<!-- /wp:heading -->
+
+		<?php
+		// Top-level product categories that have products in them. Each tile's image is bound to the category thumbnail (see almalinux_shop_register_category_image_source() in functions.php), and functions.php also leaves out the default "Uncategorized" category. The tile colors come from shop.css.
+		?>
+		<!-- wp:terms-query {"termQuery":{"perPage":12,"taxonomy":"product_cat","order":"asc","orderBy":"name","include":[],"hideEmpty":true,"showNested":false,"inherit":false},"align":"wide","className":"al-shop-categories"} -->
+		<div class="wp-block-terms-query alignwide al-shop-categories">
+			<!-- wp:term-template -->
+				<!-- wp:image {"aspectRatio":"1","scale":"cover","sizeSlug":"woocommerce_thumbnail","linkDestination":"none","metadata":{"bindings":{"url":{"source":"almalinux-shop/category-image"},"alt":{"source":"almalinux-shop/category-image"}}},"className":"al-shop-category-image"} -->
+				<figure class="wp-block-image size-woocommerce_thumbnail al-shop-category-image"><img alt="" style="aspect-ratio:1;object-fit:cover"/></figure>
+				<!-- /wp:image -->
+
+				<!-- wp:term-name {"level":3,"isLink":true,"className":"al-shop-category-name","fontSize":"medium","fontFamily":"system"} /-->
+
+				<!-- wp:term-description {"className":"al-shop-category-description","fontSize":"small"} /-->
+			<!-- /wp:term-template -->
+		</div>
+		<!-- /wp:terms-query -->
+	</div>
+	<!-- /wp:group -->
+
 	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--50)">
 		<!-- wp:heading {"align":"wide"} -->
@@ -63,16 +88,6 @@
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->
-	</div>
-	<!-- /wp:group -->
-
-	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|60"}}},"backgroundColor":"accent-5","layout":{"type":"constrained"}} -->
-	<div class="wp-block-group alignfull has-accent-5-background-color has-background" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--60)">
-		<!-- wp:heading {"align":"wide"} -->
-		<h2 class="wp-block-heading alignwide"><?php esc_html_e( 'Browse by category', 'almalinux-shop' ); ?></h2>
-		<!-- /wp:heading -->
-
-		<!-- wp:woocommerce/product-categories {"hasCount":false,"hasEmpty":false,"isHierarchical":false,"align":"wide","className":"al-shop-category-list"} /-->
 	</div>
 	<!-- /wp:group -->
 </main>
