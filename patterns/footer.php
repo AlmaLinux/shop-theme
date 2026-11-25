@@ -10,7 +10,7 @@
  * @package almalinux-shop
  */
 
-$almalinux_shop_icon = esc_url( get_stylesheet_directory_uri() . '/assets/images/icon.svg' );
+$almalinux_shop_logo = esc_url( get_stylesheet_directory_uri() . '/assets/images/logo-white-text.svg' );
 ?>
 <!-- wp:group {"align":"full","className":"al-shop-footer","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|50"}},"elements":{"link":{"color":{"text":"var:preset|color|accent-2"},":hover":{"color":{"text":"var:preset|color|al-text-on-dark"}}},"heading":{"color":{"text":"var:preset|color|al-text-on-dark"}}}},"backgroundColor":"al-deep-band","textColor":"al-text-on-dark","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull al-shop-footer has-al-text-on-dark-color has-al-deep-band-background-color has-text-color has-background has-link-color" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--50)">
@@ -18,8 +18,8 @@ $almalinux_shop_icon = esc_url( get_stylesheet_directory_uri() . '/assets/images
 	<div class="wp-block-columns alignwide">
 		<!-- wp:column {"width":"34%"} -->
 		<div class="wp-block-column" style="flex-basis:34%">
-			<!-- wp:image {"width":"48px","height":"48px","sizeSlug":"full","linkDestination":"none"} -->
-			<figure class="wp-block-image size-full is-resized"><img src="<?php echo $almalinux_shop_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above. ?>" alt="" style="width:48px;height:48px"/></figure>
+			<!-- wp:image {"width":"208px","height":"40px","sizeSlug":"full","linkDestination":"none"} -->
+			<figure class="wp-block-image size-full is-resized"><img src="<?php echo $almalinux_shop_logo; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped above. ?>" alt="" style="width:208px;height:40px"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:paragraph {"style":{"typography":{"fontWeight":"600"}}} -->
