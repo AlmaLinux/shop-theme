@@ -14,7 +14,7 @@
 				{ "name": "Soft blue (links on dark)", "slug": "accent-2", "color": "#c4e1ff" },
 				{ "name": "Brand blue (links on light)", "slug": "accent-3", "color": "#0069da" },
 				{ "name": "Muted text", "slug": "accent-4", "color": "#5b6670" },
-				{ "name": "Light surface", "slug": "accent-5", "color": "#faf5f5" },
+				{ "name": "Light surface", "slug": "accent-5", "color": "#eef1f4" },
 				{ "name": "Hairline", "slug": "accent-6", "color": "color-mix(in srgb, currentColor 20%, transparent)" },
 				{ "name": "Deep blue (primary)", "slug": "al-deep-blue", "color": "#0f4266" },
 				{ "name": "Black pearl (deep band)", "slug": "al-deep-band", "color": "#082336" },
@@ -25,7 +25,13 @@
 				{ "name": "Brand green", "slug": "al-green", "color": "#86da2f" },
 				{ "name": "Error red (AA on white)", "slug": "al-red", "color": "#e1282b" },
 				{ "name": "Text on dark", "slug": "al-text-on-dark", "color": "#fefefe" },
-				{ "name": "Border on light", "slug": "al-border", "color": "#dcd7d7" }
+				{ "name": "Border on light", "slug": "al-border", "color": "#dcd7d7" },
+				{ "name": "Logo red (decorative, not for text)", "slug": "al-logo-red", "color": "#ff4949" },
+				{ "name": "Tint blue (tiles)", "slug": "al-tint-blue", "color": "#e8f3ff" },
+				{ "name": "Tint green (tiles)", "slug": "al-tint-green", "color": "#eef9e3" },
+				{ "name": "Tint yellow (tiles)", "slug": "al-tint-yellow", "color": "#fff6d6" },
+				{ "name": "Tint red (tiles)", "slug": "al-tint-red", "color": "#ffe9e9" },
+				{ "name": "Tint cyan (tiles)", "slug": "al-tint-cyan", "color": "#e3f7ff" }
 			]
 		},
 		"layout": {
