@@ -129,7 +129,7 @@
 	}
 }
 
-/* "Seen at events" band ---------------------------------------------- */
+/* "As seen at events" band ---------------------------------------------- */
 
 /* Core's gallery is two columns at every width below 600px and lays captions over the photos. This makes it one column on phones, two on tablets and four on desktops, with each caption under its photo. */
 .al-shop-events-gallery.wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {

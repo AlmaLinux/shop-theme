@@ -11,7 +11,7 @@
 
 $almalinux_shop_hero = esc_url( get_theme_file_uri( 'assets/images/hero-ato-2024.jpg' ) );
 
-// Photos for the "Seen at events" gallery. See CREDITS.md for where each one came from.
+// Photos for the "As seen at events" gallery. See CREDITS.md for where each one came from.
 $almalinux_shop_events = array(
 	array(
 		'file'    => 'event-ato-2024.jpg',
@@ -49,11 +49,11 @@ $almalinux_shop_events = array(
 			<!-- /wp:paragraph -->
 
 			<!-- wp:heading {"level":1,"style":{"typography":{"lineHeight":"1.08"}},"fontSize":"display"} -->
-			<h1 class="wp-block-heading has-display-font-size" style="line-height:1.08"><?php esc_html_e( 'Merch for the AlmaLinux community', 'almalinux-shop' ); ?></h1>
+			<h1 class="wp-block-heading has-display-font-size" style="line-height:1.08"><?php esc_html_e( 'Swag for the AlmaLinux community', 'almalinux-shop' ); ?></h1>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"fontSize":"large"} -->
-			<p class="has-large-font-size"><?php esc_html_e( 'Shirts, hoodies, hats, mugs and stickers. Every item is printed when you order it and shipped straight to you.', 'almalinux-shop' ); ?></p>
+			<p class="has-large-font-size"><?php esc_html_e( 'Shirts, hoodies, hats, mugs and stickers. Everything you need to show your AlmaLinux love.', 'almalinux-shop' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
@@ -135,15 +135,15 @@ $almalinux_shop_events = array(
 		<!-- wp:group {"align":"wide","layout":{"type":"constrained","contentSize":"46rem","justifyContent":"left"}} -->
 		<div class="wp-block-group alignwide">
 			<!-- wp:heading -->
-			<h2 class="wp-block-heading"><?php esc_html_e( 'Seen at events', 'almalinux-shop' ); ?></h2>
+			<h2 class="wp-block-heading"><?php esc_html_e( 'As seen at events', 'almalinux-shop' ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"textColor":"accent-2","fontSize":"large"} -->
 			<p class="has-accent-2-color has-text-color has-large-font-size"><?php
 		printf(
 			/* translators: %s: link to the shop's email address. */
-			esc_html__( 'These are AlmaLinux community members at our booths around the world. If you have a photo of yourself in AlmaLinux gear, send it to %s and we might feature it here.', 'almalinux-shop' ),
-			'<a href="mailto:hello@almalinux.org">hello@almalinux.org</a>'
+			esc_html__( 'These are AlmaLinux community members at our booths around the world. If you have a photo of yourself in AlmaLinux gear, send it to %s and we might feature it here!', 'almalinux-shop' ),
+			'<a href="mailto:promo-sig@almalinux.org">promo-sig@almalinux.org</a>'
 		);
 		?></p>
 			<!-- /wp:paragraph -->
@@ -175,7 +175,7 @@ $almalinux_shop_events = array(
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph -->
-				<p><?php esc_html_e( 'Nothing sits in a warehouse. Each item is made for you and shipped straight to your door.', 'almalinux-shop' ); ?></p>
+				<p><?php esc_html_e( 'As an all-volunteer organization, we don\'t have a warehouse. Each item is made for you and shipped straight to your door.', 'almalinux-shop' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:column -->
@@ -191,7 +191,7 @@ $almalinux_shop_events = array(
 				printf(
 					/* translators: %s: link to the shop's email address. */
 					esc_html__( 'Email %s and we\'ll sort it out.', 'almalinux-shop' ),
-					'<a href="mailto:hello@almalinux.org">hello@almalinux.org</a>'
+					'<a href="mailto:shop@almalinux.org">shop@almalinux.org</a>'
 				);
 				?></p>
 				<!-- /wp:paragraph -->

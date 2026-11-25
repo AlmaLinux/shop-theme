@@ -31,7 +31,7 @@ $almalinux_shop_icon = esc_url( get_stylesheet_directory_uri() . '/assets/images
 			<!-- /wp:paragraph -->
 
 			<!-- wp:paragraph {"fontSize":"small"} -->
-			<p class="has-small-font-size"><?php esc_html_e( 'Questions about an order?', 'almalinux-shop' ); ?> <a href="mailto:hello@almalinux.org">hello@almalinux.org</a></p>
+			<p class="has-small-font-size"><?php esc_html_e( 'Questions about an order?', 'almalinux-shop' ); ?> <a href="mailto:shop@almalinux.org">shop@almalinux.org</a></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
