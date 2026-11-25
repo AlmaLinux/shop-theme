@@ -81,6 +81,7 @@ $almalinux_shop_icon = esc_url( get_stylesheet_directory_uri() . '/assets/images
 			<ul class="wp-block-list al-shop-footer-list has-small-font-size">
 				<!-- wp:list-item --><li><a href="https://almalinux.org/p/privacy-policy/"><?php esc_html_e( 'Privacy Policy', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
 				<!-- wp:list-item --><li><a href="https://almalinux.org/p/terms-of-service/"><?php esc_html_e( 'Terms of Service', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
+				<!-- wp:list-item --><li><a href="https://almalinux.org/p/the-almalinux-os-licensing-policy/"><?php esc_html_e( 'Licensing Policy', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
 				<!-- wp:list-item --><li><a href="https://almalinux.org/p/the-almalinux-os-trademark-usage-policy/"><?php esc_html_e( 'Trademark Usage Policy', 'almalinux-shop' ); ?></a></li><!-- /wp:list-item -->
 			</ul>
 			<!-- /wp:list -->
@@ -90,7 +91,7 @@ $almalinux_shop_icon = esc_url( get_stylesheet_directory_uri() . '/assets/images
 	<!-- /wp:columns -->
 
 	<!-- wp:paragraph {"align":"wide","className":"al-shop-footer-legal","fontSize":"small"} -->
-	<p class="alignwide al-shop-footer-legal has-small-font-size">&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php esc_html_e( 'AlmaLinux OS Foundation. AlmaLinux and the AlmaLinux logo are trademarks of the AlmaLinux OS Foundation.', 'almalinux-shop' ); ?></p>
+	<p class="alignwide al-shop-footer-legal has-small-font-size"><?php esc_html_e( 'AlmaLinux and the AlmaLinux logo are trademarks of the AlmaLinux OS Foundation.', 'almalinux-shop' ); ?></p>
 	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
