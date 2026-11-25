@@ -24,9 +24,9 @@ $almalinux_shop_events = array(
 		'caption' => __( 'SC24', 'almalinux-shop' ),
 	),
 	array(
-		'file'    => 'event-cloudfest-2024.jpg',
+		'file'    => 'event-cloudfest-2025.jpg',
 		'alt'     => __( 'Three people taking a selfie in front of the AlmaLinux booth at CloudFest, one of them in an AlmaLinux shirt.', 'almalinux-shop' ),
-		'caption' => __( 'CloudFest 2024', 'almalinux-shop' ),
+		'caption' => __( 'CloudFest 2025', 'almalinux-shop' ),
 	),
 	array(
 		'file'    => 'event-nerdearla.jpg',

@@ -7,5 +7,5 @@ The photos in `assets/images/` are AlmaLinux community event photos from the alm
 | `hero-ato-2024.jpg` | All Things Open 2024 | `static/blog-images/2025/ato_2024.jpg`, from [Ending 2024 with 9 events in 4 months](https://almalinux.org/blog/2025-01-10-event-wrapup/) | Front page hero |
 | `event-ato-2024.jpg` | All Things Open 2024 | `static/blog-images/2025/ato_2024_winners.jpg`, from the same post | "Seen at events" |
 | `event-sc24.jpg` | SC24 | `static/blog-images/2025/sc_2024.jpg`, from the same post | "Seen at events" |
-| `event-cloudfest-2024.jpg` | CloudFest 2024 | `static/blog-images/2026/picture-4.jpg`, from [2025 AlmaLinux Year in Review](https://almalinux.org/blog/2026-02-25-almalinux-2025-recap/) | "Seen at events" |
+| `event-cloudfest-2025.jpg` | CloudFest 2025 | `static/blog-images/2026/picture-4.jpg`, from [2025 AlmaLinux Year in Review](https://almalinux.org/blog/2026-02-25-almalinux-2025-recap/) | "Seen at events" |
 | `event-nerdearla.jpg` | Nerdearla | `static/blog-images/2025/nerdearla.jpg`, from [Ending 2024 with 9 events in 4 months](https://almalinux.org/blog/2025-01-10-event-wrapup/) | "Seen at events" |
