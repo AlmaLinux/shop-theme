@@ -4,7 +4,7 @@
  * Slug: almalinux-shop/front-page
  * Categories: almalinux-shop
  * Inserter: no
- * Description: Shop home: a short welcome band, the newest products, and a list of categories.
+ * Description: Shop home: a photo hero, category tiles, the newest products, photos from community events, and a short reassurance row.
  *
  * @package almalinux-shop
  */
@@ -159,6 +159,46 @@ $almalinux_shop_events = array(
 			<?php endforeach; ?>
 		</figure>
 		<!-- /wp:gallery -->
+	</div>
+	<!-- /wp:group -->
+	<?php
+	// Short reassurance items before the footer. The line icons come from shop.css (al-shop-reassure-print and al-shop-reassure-help), so editors only see a heading and a paragraph.
+	?>
+	<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+		<!-- wp:columns {"align":"wide","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
+		<div class="wp-block-columns alignwide">
+			<!-- wp:column {"className":"al-shop-reassure al-shop-reassure-print"} -->
+			<div class="wp-block-column al-shop-reassure al-shop-reassure-print">
+				<!-- wp:heading {"level":3} -->
+				<h3 class="wp-block-heading"><?php esc_html_e( 'Printed when you order', 'almalinux-shop' ); ?></h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p><?php esc_html_e( 'Nothing sits in a warehouse. Each item is made for you and shipped straight to your door.', 'almalinux-shop' ); ?></p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:column -->
+
+			<!-- wp:column {"className":"al-shop-reassure al-shop-reassure-help"} -->
+			<div class="wp-block-column al-shop-reassure al-shop-reassure-help">
+				<!-- wp:heading {"level":3} -->
+				<h3 class="wp-block-heading"><?php esc_html_e( 'Questions about an order?', 'almalinux-shop' ); ?></h3>
+				<!-- /wp:heading -->
+
+				<!-- wp:paragraph -->
+				<p><?php
+				printf(
+					/* translators: %s: link to the shop's email address. */
+					esc_html__( 'Email %s and we\'ll sort it out.', 'almalinux-shop' ),
+					'<a href="mailto:hello@almalinux.org">hello@almalinux.org</a>'
+				);
+				?></p>
+				<!-- /wp:paragraph -->
+			</div>
+			<!-- /wp:column -->
+		</div>
+		<!-- /wp:columns -->
 	</div>
 	<!-- /wp:group -->
 </main>
