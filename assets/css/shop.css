@@ -10,6 +10,26 @@
 	margin-block-start: 0;
 }
 
+/* A thin stripe in the five logo colors, 6px under the header and 4px along the top of the footer. It's a pseudo-element on the template part wrapper, so it sits in the normal flow (nothing overlaps it, and no gap opens next to it) and editors never see it as a block. */
+.wp-block-template-part:has(> .al-shop-header)::after,
+.wp-block-template-part:has(> .al-shop-footer)::before {
+	content: "";
+	display: block;
+	height: 6px;
+	background: linear-gradient(
+		90deg,
+		var(--wp--preset--color--accent-3) 0 20%,
+		var(--wp--preset--color--al-cta) 20% 40%,
+		var(--wp--preset--color--al-green) 40% 60%,
+		var(--wp--preset--color--accent-1) 60% 80%,
+		var(--wp--preset--color--al-logo-red) 80% 100%
+	);
+}
+
+.wp-block-template-part:has(> .al-shop-footer)::before {
+	height: 4px;
+}
+
 /* Header ------------------------------------------------------------- */
 
 .al-shop-logo img {
