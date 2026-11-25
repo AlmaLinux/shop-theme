@@ -4,8 +4,17 @@ This is the WordPress block theme for [shop.almalinux.org](https://shop.almalinu
 
 ## What's in it
 
-- **Brand settings in `theme.json`.** The AlmaLinux palette, Montserrat Light headings, the almalinux.org body font stack, button styles and spacing all live here. Change a color or a font size in this one file and every page follows. The palette and type match [DESIGN.md in the almawww repo](https://github.com/AlmaLinux/almalinux.org/blob/master/DESIGN.md).
-- **Header and footer** (`patterns/header.php`, `patterns/footer.php`) that match the almalinux.org navbar and footer, with the account link and mini cart from WooCommerce.
+- **Brand settings in `theme.json`.** The AlmaLinux palette, Montserrat Light headings, the almalinux.org body font stack, button styles and spacing all live here. Change a color or a font size in this one file and every page follows. The palette and type match [DESIGN.md in the almawww repo](https://github.com/AlmaLinux/almalinux.org/blob/master/DESIGN.md). Besides the core brand colors, the palette has:
+  - **Light surface** (`accent-5`, `#eef1f4`), the cool gray behind product images and the made-to-order note.
+  - **Five tile tints** (`al-tint-blue`, `al-tint-green`, `al-tint-yellow`, `al-tint-red` and `al-tint-cyan`), named "Tint ... (tiles)" in the color picker. The category tiles on the front page cycle through them.
+  - **Logo red** (`al-logo-red`, `#ff4949`), used only in the logo-color stripe. It doesn't meet WCAG AA as text, so use **Error red** (`al-red`) for red text.
+- **Header and footer** (`patterns/header.php`, `patterns/footer.php`) that match the almalinux.org navbar and footer, with the account link and mini cart from WooCommerce. A thin stripe in the five logo colors runs under the header and along the top of the footer. It's drawn in `assets/css/shop.css`, so it doesn't show up as a block in the editor.
+- **A front page** (`patterns/front-page.php`) with these sections, top to bottom:
+  1. A hero: a community photo in a Cover block, with the headline, intro, "Shop all products" and "Shop shirts" (which links to the Apparel category at `/product-category/apparel/`).
+  2. "Shop by category": a tile for each top-level product category that has products in it, with its thumbnail, name and description. The tiles come from core's Terms Query block, so adding or editing a category under **Products > Categories** updates them. The thumbnail comes from a small block bindings source in `functions.php` ("Product category image"), because WordPress has no block for a category's image. Uncategorized is always left out.
+  3. "New in the shop": the eight newest products.
+  4. "Seen at events": a gallery of community members at AlmaLinux booths.
+  5. Two short reassurance items: made to order, and who to email with questions.
 - **Store templates** in `templates/` for every page a shopper sees:
 
   | Template | Page |
@@ -22,7 +31,9 @@ This is the WordPress block theme for [shop.almalinux.org](https://shop.almalinu
 
   Order confirmation and My account use WooCommerce's own templates with this theme's header and footer.
 - **Shared patterns.** Every listing page uses `patterns/product-archive.php` (search results use `patterns/product-search.php`), so a change to the product grid only has to be made once. `patterns/made-to-order-note.php` is the note on product pages that tells shoppers each item is printed when they order it.
+- **Product cards.** Every product grid (front page, all products, categories, tags, attributes and search) puts each image on a rounded light gray card. Printful's white image backgrounds blend into the card, and cards lift slightly on hover unless the visitor prefers reduced motion.
 - **Self-hosted Montserrat** in `assets/fonts/montserrat/`, so the shop doesn't load anything from Google.
+- **Images** in `assets/images/`: the AlmaLinux logos (`logo-white-text.svg`, `logo-dark-text.svg` and `icon.svg`), the front page hero photo (`hero-ato-2024.jpg`, 2000px wide) and the four "Seen at events" photos (`event-*.jpg`, 1200px wide). `CREDITS.md` lists where each photo came from and which event it shows. Keep new photos under about 300 KB for the hero and 200 KB for the gallery, and strip their location metadata before you add them.
 
 ## Installing
 
@@ -61,6 +72,8 @@ The theme code is licensed under the GNU General Public License, version 2 or la
 Montserrat is licensed separately under the SIL Open Font License 1.1 (see `assets/fonts/montserrat/OFL.txt`).
 
 The AlmaLinux name and logos are trademarks of the AlmaLinux OS Foundation and aren't covered by the GPL. See `TRADEMARKS.md`.
+
+The event photos in `assets/images/` come from the almalinux.org blog. See `CREDITS.md`.
 
 ## Contributing
 

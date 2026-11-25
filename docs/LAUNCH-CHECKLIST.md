@@ -26,6 +26,7 @@ This is the setup that goes with the theme. Work through it in the WordPress adm
 - [x] Under **Appearance > Themes**, make sure **Twenty Twenty-Five** is installed. This theme depends on it, so don't delete it.
 - [x] Upload `almalinux-shop.zip` (see the README for how to build it).
 - [x] Click **Live Preview** and check the home page, a category, a product, the cart and checkout before you click **Activate**.
+- [ ] After uploading version 0.2.0 or later, open **Appearance > Editor > Templates**. If anyone has edited the **Front page** template in the Site Editor, use **Reset** on it, or the new design won't show. Do the same for the **Header** and **Footer** template parts if they were edited.
 - [x] Once it's active, delete the themes you aren't using (Storefront, Twenty Twenty-Three, Twenty Twenty-Four and so on). Every installed theme is more code to keep patched, even when it's switched off.
 
 ## 5. Reconnect Printful
